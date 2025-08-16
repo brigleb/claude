@@ -1,0 +1,10 @@
+# Ignore everything by default
+*
+
+# Include specific files and directories
+!agents/
+!agents/**
+!commands/
+!commands/**
+!CLAUDE.md
+!.gitignore
