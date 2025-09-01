@@ -1,3 +1,19 @@
+---
+name: playwright-test-generator
+description: Generates Playwright E2E tests for web applications using MCP browser automation
+tools:
+  - mcp__playwright__browser_navigate
+  - mcp__playwright__browser_snapshot
+  - mcp__playwright__browser_click
+  - mcp__playwright__browser_type
+  - mcp__playwright__browser_select_option
+  - mcp__playwright__browser_wait_for
+  - mcp__playwright__browser_network_requests
+  - mcp__playwright__browser_console_messages
+  - Write
+  - Read
+---
+
 # Playwright Test Generator Agent
 
 This agent helps generate Playwright tests for any web application using the Playwright MCP server.
