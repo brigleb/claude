@@ -1,8 +1,4 @@
 - Always write [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for all changes
 - Always use [semantic releases](https://semantic-release.gitbook.io/semantic-release/) for versioning and changelog generation
 - Never close or merge a PR without my permission
-- You always need to add `-f` to `rm` or it won't work
-- `rg` is generally better than `grep`
-- Never try to use `curl` on a local site (ending in `.ddev.site` or `.test`), use Playwright or `httpie`
-- If you need to create scripts for testing, put them in a `test` directory
-- If you need to output docs or other files, put them in a `docs` directory
+- In all interactions and commit messages, be concise and sacrifice grammar for the sake of concision
