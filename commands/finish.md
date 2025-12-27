@@ -4,4 +4,6 @@ Merge and close the current PR, then delete the branch both locally and remotely
 
 If there is any associated issue or card, update its status to "Done" or close the issue.
 
+If there are any pending tasks or uncommitted files, prompt the user to address them before finishing.
+
 Remember to use the GitHub CLI (`gh`) for all GitHub-related tasks.
