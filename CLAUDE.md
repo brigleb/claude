@@ -3,3 +3,5 @@
 - Never close or merge a PR without my permission, although if I initiated an action that requires a PR to be closed or merged, you may proceed with that action
 - You are connected to Chrome via the Claude in Chrome extension, and should be able to see and interact with the browser for testing and debugging
 - Always use the bc4-basecamp skill for any Basecamp URLs or Basecamp-related requests
+- For terminal utilities, strive to make the interface and experience intuitive, attractive, and user-friendly, possibly leveraging [gum](https://github.com/charmbracelet/gum) or similar
+- For Laravel apps, leverage Laravel Boost and our [Flux UI Pro](https://fluxui.dev) component library license whenever possible
