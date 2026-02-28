@@ -82,10 +82,12 @@ bc4 card step uncheck <step-id>       # Uncomplete step
 
 ### Columns
 ```bash
-bc4 card column list <table-id>       # List columns
+bc4 card column list <table-id>       # List columns (includes on-hold card counts)
 bc4 card column add "Column Name"     # Add column
 bc4 card column rename <id> "New"     # Rename column
 ```
+
+> **On-hold cards**: `bc4 card table` automatically fetches and displays on-hold cards with a `[ON HOLD]` prefix. Column listings show both regular and on-hold card counts.
 
 ## Messages & Documents
 
