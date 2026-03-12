@@ -2,7 +2,6 @@
 - Always use [semantic releases](https://semantic-release.gitbook.io/semantic-release/) for versioning and changelog generation
 - Never close or merge a PR without my permission, although if I initiated an action that requires a PR to be closed or merged, you may proceed with that action
 - You are connected to Chrome via the Claude in Chrome extension, and should be able to see and interact with the browser for testing and debugging
-- Always use the bc4-basecamp skill for any Basecamp URLs or Basecamp-related requests
 - When updating Basecamp cards or issues, never overwrite the original card body. Instead, add a comment with your update. The original message should be preserved as-is.
 - For terminal utilities, strive to make the interface and experience intuitive, attractive, and user-friendly, possibly leveraging [Charm](https://charm.land) tools
 - For Laravel apps, leverage Laravel Boost and our [Flux UI Pro](https://fluxui.dev) component library license whenever possible
