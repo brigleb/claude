@@ -7,7 +7,7 @@ Follow these steps:
    - **Basecamp**: Run `basecamp timeline me --json` and filter for yesterday's date. Extract the action, project name, target, and summary excerpt for each event.
    - **GitHub**: Run `gh api search/commits` for `author:@me committer-date:<yesterday>` to get commits. Also check `gh api search/issues` for `author:@me updated:<yesterday>` for any PR/issue activity.
    - **Notion**: Use the Notion MCP search tool to find pages created or updated yesterday, filtering by date range. Look for meeting notes, documents, and content updates.
-   - **Harvest**: Run `hrvst time-entries list --from <yesterday> --to <yesterday> --output json` to get all time entries for the day. Extract project name, task name, hours, and notes for each entry.
+   - **Harvest**: Run `hrvst time-entries list --from <yesterday> --to <yesterday> --fields id,hours,project.name,task.name,notes,user.id,user.name` to get all time entries for the day. Filter results to only Ray's entries (user.name = "Raymond Brigleb", user.id = 18287) — the API returns all team members by default. Extract project name, task name, hours, and notes for each entry.
 
 2. **Organize the summary** by source with these sections:
 
