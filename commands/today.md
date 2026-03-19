@@ -1,4 +1,4 @@
-Review what I should be aware of and working on today from Basecamp, GitHub, Notion, and Gmail.
+Review what I should be aware of and working on today from Basecamp, Notion, and Gmail.
 
 Follow these steps:
 
@@ -8,12 +8,8 @@ Follow these steps:
      - Run `basecamp reports assigned --json` to get my assigned todos across all projects.
      - Run `basecamp reports overdue --json` to surface anything past due.
      - Run `basecamp timeline --json` and filter for today's date to see what's already happened and any activity I should respond to.
-   - **GitHub**:
-     - Run `gh api search/issues` for `author:@me state:open type:pr` to get my open PRs and their review status.
-     - Run `gh api search/issues` for `review-requested:@me type:pr state:open` to find PRs awaiting my review.
-     - Run `gh api notifications` to check for any mentions or CI failures.
-   - **Notion**: Use the Notion MCP search tool to find pages updated today or relevant upcoming items (meetings, tasks, deadlines). Also search for any meeting notes from today.
-   - **Gmail**: Use the Gmail MCP tools to search for recent messages — flag anything urgent, action-required, or time-sensitive from today and yesterday. Check for unread messages that need a response.
+   - **Notion**: Use the Notion MCP search tool to find pages updated in the last 48 hours, or relevant upcoming items (in the Meetings, Documents, and Cases databases).
+   - **Gmail**: Use the Gmail MCP tools to search for recent messages (last 2 weeks only) — flag anything urgent, action-required, or time-sensitive from today and yesterday. Check for unread messages that need a response.
 
 2. **Organize the briefing** into these sections:
 
