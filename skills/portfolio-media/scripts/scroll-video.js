@@ -19,7 +19,6 @@ const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/
 // ---------------------------------------------------------------------------
 
 async function recordNative(argv, vp, outDir, base) {
-  const speed = Number(argv.speed) || 60;
   const easingBody = getEasingBody(argv.easing);
 
   const tmpVideoDir = path.join(outDir, '_tmp_video');
@@ -50,10 +49,20 @@ async function recordNative(argv, vp, outDir, base) {
 
   const scrollHeight = await page.evaluate(() => document.body.scrollHeight);
   const maxScroll = Math.max(0, scrollHeight - vp.height);
-  const durationMs = (maxScroll / speed) * 1000;
+
+  // If --duration is given, calculate speed from it (subtracting 2s for top/bottom holds)
+  const holdTime = 2; // 1s top + 1s bottom
+  let scrollDurationSec;
+  if (argv.duration) {
+    scrollDurationSec = Math.max(1, Number(argv.duration) - holdTime);
+  } else {
+    const speed = Number(argv.speed) || 60;
+    scrollDurationSec = maxScroll / speed;
+  }
+  const durationMs = scrollDurationSec * 1000;
 
   console.log(`  Page height: ${scrollHeight}px, max scroll: ${maxScroll}px`);
-  console.log(`  Scroll duration: ${(durationMs / 1000).toFixed(2)}s, easing: ${argv.easing}`);
+  console.log(`  Scroll duration: ${scrollDurationSec.toFixed(1)}s (+${holdTime}s hold), easing: ${argv.easing}`);
 
   const recordStartTime = Date.now();
 
@@ -123,7 +132,6 @@ async function recordNative(argv, vp, outDir, base) {
 // ---------------------------------------------------------------------------
 
 async function recordScreenshots(argv, vp, outDir, base) {
-  const speed = Number(argv.speed) || 60;
   const fps = Number(argv.fps) || 30;
   const scaleFactor = Number(argv['device-scale-factor']) || 2;
 
@@ -152,6 +160,16 @@ async function recordScreenshots(argv, vp, outDir, base) {
 
   const scrollHeight = await page.evaluate(() => document.body.scrollHeight);
   const maxScroll = Math.max(0, scrollHeight - vp.height);
+
+  // Calculate speed: --duration takes priority over --speed
+  const holdTime = 2;
+  let speed;
+  if (argv.duration) {
+    const scrollSec = Math.max(1, Number(argv.duration) - holdTime);
+    speed = maxScroll / scrollSec;
+  } else {
+    speed = Number(argv.speed) || 60;
+  }
   const pxPerFrame = speed / fps;
 
   console.log(`  Page height: ${scrollHeight}px, max scroll: ${maxScroll}px`);
@@ -203,6 +221,7 @@ async function main() {
       speed: 60,
       fps: 30,
       delay: 0,
+      duration: null,
       method: 'native',
       easing: 'linear',
       'device-scale-factor': 2,
