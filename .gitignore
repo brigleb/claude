@@ -10,3 +10,7 @@
 !skills/**
 !CLAUDE.md
 !.gitignore
+
+# ...but never track dependency or lockfile artifacts inside skills
+skills/**/node_modules/
+skills/**/package-lock.json
